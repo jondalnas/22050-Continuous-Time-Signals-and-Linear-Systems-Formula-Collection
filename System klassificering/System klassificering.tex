@@ -1,0 +1,103 @@
+\subsection{Typer af signaler}
+	\begin{itemize}
+		\item \textbf{Deterministisk signal}: Et signal der kan beskrives som en matematisk ligning
+		\item \textbf{Stochatisk signal}: Et tilfældigt signal, der ikke kan bestives som en matematisk ligning
+		\item \textbf{Kontinuer tids signal}: Et signal der ikke hopper i tid
+		\item \textbf{Diskret tids signal}: Et signal der hopper i tid
+		\item \textbf{Analogt signal}: Et signal der er kontinuer i både tid og amplitude
+		\item \textbf{Digitalt signal}: Et signal der er Diskret i både tid og amplitude
+		\item \textbf{Lige signal}: Et signal der kan spejles over y-aksen
+		\item \textbf{Ulige signal}: Et signal hvor den negative af signalet er spejlet over y-aksen
+		\item \textbf{Aperiodisk signal}: Et signal der ikke gentager sig
+		\item \textbf{Periodisk signal}: Et signal der gentager sig med konstant tidsmellemrum
+	\end{itemize}
+
+\subsection{Operationer på signaler}
+	\subsubsection{Tidsskalering}
+		Et originalt signal $x$, skaleres med $a$ i tid
+		\begin{align}
+			y(t)=x(a\cdot t)
+		\end{align}
+
+	\subsubsection{Tidsforskydning}
+		Et originalt signal $x$, forskydes i tid med $t_0$
+		\begin{align}
+			y(t)=x(t-t_0)
+		\end{align}
+
+	\subsubsection{Tidsreflektion}
+		Et originalt signal $x$, reflekteres over y-aksen
+		\begin{align}
+			y(t)=x(-T)
+		\end{align}
+
+\subsection{Signal energi og effekt}
+	\subsubsection{Energi}
+		\begin{align}
+			E=\int_{-\infty}^{\infty}|x(t)|^2\,dt
+		\end{align}
+
+	\subsection{Effekt}
+		\begin{align}
+			P=\lim_{T_0\rightarrow\infty}\frac{1}{T_0}\int_{-T_0/2}^{T_0/2}|x(t)|^2\,dt
+		\end{align}
+
+\subsubsection{Specielle signaler}
+	\subsubsection{Unit ramp (Enhedsrampe)}
+		\begin{equation}
+			r(t)=\begin{cases}
+				0,t<0\\
+				t,t\geq 0
+			\end{cases}
+		\end{equation}
+
+	\subsubsection{Unit step (Enhedstrin)}
+		\begin{equation}
+			u(t)=\begin{cases}
+				0,t<0\\
+				1,t\geq 0
+			\end{cases}
+		\end{equation}
+
+	\subsubsection{Unit impuls (Impulsfunktionen)}
+		\begin{align}
+			\delta(t)=0,t\neq 0\\
+			\int_{\infty}^{\infty}\delta(t)\,dt=1
+		\end{align}
+	
+	\subsubsection{Impulsfunktion egenskaber}
+		\begin{enumerate}
+			\item $\delta(t)=\delta(-t)$, Lige funktion
+			\item $\int_{0_-}^{0_+}A\delta(t)\,dt=A$, Arealet under impulsfunktionen er dens styrke
+			\item $A\delta(t-t_0)=0,t\neq t_0$, Nul alle andre steder end $t_0$
+			\item $A\delta(t-t_0)+B\delta(t-t_0)=(A+B)\delta(t-t_0)$, Superpositionen af to impulser lægger deres styrker sammen
+			\item $y(t)\delta(t-t_0)=y(t_0)\delta(t-t_0)$, produktet af et signal og impuls funktionen er impulsfunktionen med styrke af signalet i $t_0$
+		\end{enumerate}
+
+\subsection{Kompleks representation af sinussignaler}
+	\subsubsection{Eulers idensitet}
+		\begin{align}
+			e^{j\omega t}=\cos(\omega t)+j\sin(\omega t)
+		\end{align}
+
+		\begin{align}
+			e^{j\omega t}+e^{-j\omega t}=2\cos(\omega t)\\
+			e^{j\omega t}-e^{-j\omega t}=j2\sin(\omega t)
+		\end{align}
+
+		\begin{align}
+			e^{\sigma+j\omega t}=e^{\sigma}(\cos(\omega t)+j\sin(\omega t))
+		\end{align}
+
+	\subsubsection{Det komplekse plan}
+		To komplekst konjugerede punkter i det komplekse plan beskriver en cosinus kurve. Hvis de to punkter befinder sig på den imaginere akse, er det et perfekt cosinus signal, på venstre halvplan er det en dempet cosinus signal og på højre halvplan er det et stigende cosinus signal
+
+\subsection{LTIC}
+	\subsubsection{Lineær system}
+		Et system hvor superpositionsprincippet gælder; $x\rightarrow y$, $k_1x_1+k_2x_2\rightarrow k_1y_1+k_2y_2$
+
+	\subsubsection{Tidsinvariant}
+		Hvis systemet får en tidsforskydning i input, giver det en tidsforskydning i output; $x\rightarrow y$, $x(t-t_0)\rightarrow y(t-t_0)$
+
+	\subsubsection{Kausalt system}
+		Et system hvor outputtet kun gælder på lige nu og forhenværende input
