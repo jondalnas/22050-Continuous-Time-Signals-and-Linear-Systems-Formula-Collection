@@ -1,0 +1,33 @@
+\subsection{Dekomposering af signalrespons}
+	Et respons består af to signaler, et hvor vi tager højde for hvordan systemet så ud før vi påtrykkede et input (zero input) og et hvor vi tager højde for hvordan systemet opfører sig nå vi påtrykker et input fra 0, hvor systemet ikke har haft et staie før inputet (zero state)
+	\subsubsection{Zero-input respons}
+		Signalet flader til ro efter $t>0$ efter en initiel ændring fra hvile
+
+	\subsubsection{Zero-state respons}
+		Inputsignal bliver påtrykt fra jord, dette giver er inputdrevet respons
+	
+	\subsubsection{Egenskaber ved dekmposering}
+		\begin{align}
+			y=y_{zi}+y_{zs}\\
+			Q(D)y(t)=P(D)x(t)\\
+			Q(D)(y_{zi}+y_{zs})=P(D)x(t)\\
+			Q(D)y_{zi}=0\\
+			Q(D)y_{zs}=P(D)x(t)
+		\end{align}
+		Dekomposering giver mulighed for at løse en homogen og en inhomogen, uden initielværdier, ligning, istedet for en inhomogen ligning med initielværdier
+
+\subsection{Effekterne af en impulsrespons}
+	Hvis $y'(0_-)=0,y(0_-)=0$, så er $y'(0_+)-y'(0_-)=1$, hvilket vil sige at et impuls giver en instentan ændring i velocitet. For et system af n'te orden, vil $y^{(n-1)}=1$ og alle andre ændringer af $y$ er 0, $y^{(n-2)}(0)=y^{(n-3)}(0)=...=y(0)=0$
+
+	\subsubsection{Løsningen af impulsrespons}
+		Den naturlige respons, $y_n(t)$, til et påtrykket impuls er
+		\begin{align}
+			h(t)=u(t)P(D)(y_n(t)),t\geq 0_+,m<n\\
+			h(t)=b_n\delta(t)+u(t)P(D)(y_n(t)),t\geq 0_+,m=n
+		\end{align}
+
+	\subsubsection{Impulsrespons fra steprespons}
+		For at få impulsresponset fra et steprespons, skal vi differentiere input og derfor også output
+		\begin{align}
+			\delta(t)=\frac{du}{dt}\Rightarrow\frac{dy_u(t)}{dt}
+		\end{align}
