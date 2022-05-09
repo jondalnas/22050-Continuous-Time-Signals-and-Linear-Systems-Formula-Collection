@@ -1,0 +1,26 @@
+\subsection{Beregning af Zero-state respons}
+	Hvis vi approksimere en kurve, $x(t)$, ved hjælp af impulser, kan løse responset til vilkårlig funktion. Dette gøres med foldning
+	\begin{align}
+		x(t)=\int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)\,d\tau\\
+		y_{zs}(t)=\int_{-\infty}^{\infty}x(\tau)h(t-\tau)\,d\tau\\
+		y_{zs}(t)=h(t)*x(t)
+	\end{align}
+
+	\subsubsection{Causale signaler og systemer}
+		Ved kausalt signal, kan vi ignorere alt før $0_-$ og ved causale systemer kan vi ignorere alt efter $t$
+		\begin{align}
+			y_{zs}(t)=h(t)*x(t)=\int_{0_-}^{t}x(\tau)h(t-\tau)\,d\tau
+		\end{align}
+
+\subsection{Foldningsegenskaber}
+	\begin{itemize}
+		\item Kommutativt: $x_1(t)*x_2(t)=x_2(t)*x_1(t)$
+		\item Distributivt: $x_1(t)*(x_2(t)+x_3(t))=x_1(t)*x_2(t)+x_1(t)*x_3(t)$
+		\item Associativt: $x_1(t)*(x_2(t)*x_3(t))=(x_1(t)*x_2(t))*x_3(t)$
+		\item Forskydning: $x_1(t-T_1)*f_2(t-T_2)=c(t-T_1-T_2)$
+		\item Idensitet: $x(t)*\delta(t)=x(t)$
+		\item Brede: $T_y=T_{x_1}+T_{x_2}$
+	\end{itemize}
+
+\subsection{Stabilitet}
+	Et stabilt system har alle sine røder på venstre halvplan, eller på den imaginere akse, hvis de ikke gentager sig
