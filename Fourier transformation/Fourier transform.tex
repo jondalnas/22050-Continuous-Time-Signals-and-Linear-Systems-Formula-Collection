@@ -1,0 +1,67 @@
+Fourier transformationen eksistere kun for konvergerende funktioner
+\subsection{Fourier transformation ligningen}
+	\begin{align}
+		X(\omega)=\int_{-\infty}^{\infty}x(t)e^{-j\omega t}\,dt
+	\end{align}
+
+\subsection{Omvendt Fourier transformation}
+	\begin{align}
+		x(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}S(\omega)e^{j\omega t}\,d\omega
+	\end{align}
+
+\subsection{Spektre}
+	\begin{itemize}
+		\item Amplitudespektrum: $|X(\omega)|$
+		\item Fasespektrum: $\angle X(\omega)$
+	\end{itemize}
+
+\subsection{Brugbare funktioner}
+	\begin{itemize}
+		\item $F\{\delta(t)\}=1$
+		\item $F^{-1}\{\delta(\omega)\}=\frac{1}{2\pi}$
+		\item $F^{-1}\{2\pi\delta(\omega)\}=1$
+		\item $F^{-1}\{2\pi\delta(\omega-\omega_0)\}=e^{j\omega_0t}$
+		\item $F^{-1}\{\pi(\delta(\omega-\omega_0)+\delta(\omega+\omega_0))\}=\cos(\omega_0t)$
+		\item $F\{\text{sgn}(t)\}=\frac{2}{j\omega}$
+		\item $F\{u(t)\}=\pi\delta(\omega)+\frac{1}{j\omega}$
+	\end{itemize}
+
+\subsection{Fourier serie}
+	\subsubsection{Tidsskalering}
+		\begin{align}
+			x(at)\leftrightarrow\frac{1}{|a|}X(\frac{\omega}{a})
+		\end{align}
+
+	\subsubsection{Tidsforskydning}
+		\begin{align}
+			x(t-t_0)\leftrightarrow X(\omega)e^{-j\omega t_0}
+		\end{align}
+
+	\subsubsection{Frekvensforskydning}
+		\begin{align}
+			x(t)e^{j\omega_0t}\leftrightarrow X(\omega-\omega_0)
+		\end{align}
+
+	\subsubsection{Modulering}
+		\begin{align}
+			x(t)\cos(\omega_0t)\leftrightarrow\frac{1}{2}X(\omega-\omega_0)+\frac{1}{2}X(\omega+\omega_0)
+		\end{align}
+
+\subsection{Foldning i tid og frekvensdomænet}
+	\begin{align}
+		h(t)*x(t)\leftrightarrow H(\omega)X(\omega)
+	\end{align}
+
+	\begin{align}
+		H(\omega)*X(\omega)\leftrightarrow h(t)x(t)
+	\end{align}
+
+	\subsubsection{Tidsafhængig integration}
+		\begin{align}
+			\int_{-\infty}^{t}=x(t)*u(t)\leftrightarrow\pi X(0)\delta(\omega)+\frac{X(\omega)}{j\omega}
+		\end{align}
+	
+	\subsubsection{Tidsafhængig differentiation}
+		\begin{align}
+			\frac{dx}{dt}\leftrightarrow j\omega X(\omega)
+		\end{align}
