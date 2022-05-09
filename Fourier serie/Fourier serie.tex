@@ -1,0 +1,32 @@
+For at Fourier serien eksistere, skal funktionen konvergere
+\subsection{Fourier serien}
+	\begin{align}
+		f(t)=a_0+\sum_{n=1}^{\infty}a_n\cos(n\omega_0t)+b_n\sin(n\omega_0t)
+	\end{align}
+	\subsubsection{Koeficienterne}
+		\begin{align}
+			a_n=\frac{2}{T_0}\int_{t_1}^{t_1+T_0}f(t)\cos(n\omega_0 t)\,dt
+			b_n=\frac{2}{T_0}\int_{t_1}^{t_1+T_0}f(t)\sin(n\omega_0 t)\,dt
+		\end{align}
+
+\subsection{Kompakt fourier serie}
+	\begin{align}
+		f(t)=C_0+\sum_{n=1}^{\infty}C_n\cos(n\omega_0t+\theta_n)
+	\end{align}
+
+	\subsection{Koeficienterne}
+		\begin{align}
+			C_n=\sqrt{a_n^2+b_n^2}\\
+			\theta_n=\tan^{-1}\left(-\frac{b_n}{a_n}\right)
+		\end{align}
+
+\subsection{Kompleks fourier serie}
+	\begin{align}
+		x(t)=\sum_{n-\infty}^{\infty}D_ne^{jn\omega_0t}\\
+		D_n=\frac{1}{T_0}\int_{t_1}^{t_1+T_0}x(t)e^{-jn\omega_0t}\,dt
+	\end{align}
+
+\subsection{Effektspektrum}
+	\begin{align}
+		P_f=D_0^2+2\sum_{n=1}^{\infty}|D_n|^2
+	\end{align}
