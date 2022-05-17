@@ -65,3 +65,59 @@ Fourier transformationen eksistere kun for konvergerende funktioner
 		\begin{align}
 			\frac{dx}{dt}\leftrightarrow j\omega X(\omega)
 		\end{align}
+
+\subsection{Sampeling}
+	\subsubsection{Impulstog}
+		\begin{align}
+			\delta_s(t)=\sum_{n=-\infty}^{\infty}\delta(t-n\Delta t)
+		\end{align}
+
+		\begin{align}
+			\Delta_s(\omega)=\sum_{n=-\infty}^{\infty}\frac{\omega_s}{2\pi}\delta(\omega-n\omega_s)
+		\end{align}
+
+	\subsubsection{Nyquist sætning}
+		\begin{align}
+			x_s(t)=x(t)*\delta_s(t)\leftrightarrow X_s(\omega)=\frac{\omega_s}{(2\pi)^2}\sum_{n=-\infty}^{\infty}X(\omega-n\omega_s)
+		\end{align}
+
+		If the sampling frequency is too small, adjacent extensions of the frequency spectrum overlap and irreversible aliasing occurs ($\omega_s>2B$, hvor $B$ er båndbreden)
+	
+\subsection{Parseval's sætning}
+	Energien i et signal er arealet under $|X(\omega)|^2$
+	\begin{align}
+		E_f=\frac{1}{2\pi}\int_{-\infty}^{\infty}|X(\omega)|^2\,d\omega
+	\end{align}
+
+\subsection{Fourier transformation spektrums tabel}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		&Aperiodisk i tid&Periodisk i tid\\
+		\hline
+		Kontinuær i tid&Aperiodisk og kontinuær frekvensspektrum&Aperiodisk og diskret frekvensspektrum\\
+		\hline
+		diskret i tid&Periodisk og kontinuær frekvensspektrum&Periodisk og diskret frekvensspektrum\\
+		\hline
+	\end{tabular}
+
+\subsection{Filtre}
+	\subsubsection{Aplitude og fase}
+		\begin{align}
+			H(\omega)=\frac{P(\omega)}{Q(\omega)}
+		\end{align}
+		\begin{align}
+			|H(\omega)|=\frac{|P(\omega)|}{|Q(\omega)|}
+		\end{align}
+		\begin{align}
+			\angle H(\omega)=\angle P(\omega)-\angle Q(\omega)
+		\end{align}
+
+	\subsubsection{Cut-off frekvens}
+		Frekvensen hvor halvdelen af effekten af signalet er forsvundet
+		\begin{align}
+			|H(\omega)|=-3\text{dB}
+		\end{align}
+	
+	\subsubsection{Frekvens- og impedansskalering}
+		Ved at multiplicere vinkelhastigheden med en konstant og derefter dividere komponentværdierne med den samme værdi, kan vi skalere krekvensen af et filter\\
+		Ved at multiplicere og dividere komponentværdier med den samme konstant, kan vi opnå at skalere værdierne uden at skalere frekvensen
